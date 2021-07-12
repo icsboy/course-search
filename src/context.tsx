@@ -21,7 +21,7 @@ function SearchTermContextProvider({children}: {children: React.ReactNode}) {
 export default SearchTermContextProvider;
 
 export const useSearchTerm = () => {
-    const searchTerm = useContext(SearchTermContext);
+    const { searchTerm } = useContext(SearchTermContext);
     return searchTerm;
 }
 

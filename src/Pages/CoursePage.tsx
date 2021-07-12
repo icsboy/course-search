@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import styled from 'styled-components';
 import { coursesApi } from '../api';
 import CourseCard from '../Components/CourseCard';
-import { SearchTermContext } from '../context';
+import { useSearchTerm } from '../context';
 
 const Container = styled.div`
     height: calc(100vh - 100px);
@@ -26,7 +26,7 @@ interface ICourseProps {
 function CoursePage() {
     const [courseList, setCourseList] = useState<ICourseProps[]>([]);
 
-    const { searchTerm } = useContext(SearchTermContext);
+    const searchTerm = useSearchTerm();
 
     useEffect(() => {
         async function getCourseList(text:string) {
